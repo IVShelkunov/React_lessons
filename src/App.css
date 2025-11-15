@@ -1,0 +1,31 @@
+.layout {
+	display: flex;
+	flex-direction: column;
+}
+footer , header  {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+header {
+	background-color: rgba(80,0, 160, 0.4);
+	padding: 25px;
+}
+nav a {
+	text-decoration: none;
+	color: black;
+	font-size: 2vw;
+	margin: 0 25px;
+}
+nav a.active {
+	text-decoration: underline;
+}
+main {
+	display: flex;
+	justify-content: center;
+	padding: 20px;
+}
+footer {
+	background-color:rgba(60,20, 10, 0.5);
+	padding: 40px;
+}
