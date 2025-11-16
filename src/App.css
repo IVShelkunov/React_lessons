@@ -1,0 +1,48 @@
+html , body {
+	height: 100%;
+
+}
+* {
+	box-sizing: border-box;
+}
+.layout {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	min-height: 100vh;
+	text-align: center;
+}
+
+
+header {
+	background-color: rgba(34, 45, 110, 0.4);
+}
+nav {
+	padding: 20px;
+}
+nav a {
+	font-size: 2vw;
+	text-decoration: none;
+	color: black;
+	padding: 20px;
+}
+nav a.active {
+	text-decoration: underline;
+}
+main {
+	padding: 0 10px;
+	flex: 1;
+}
+.home ul {
+	list-style-type: none;
+}
+form {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+footer {
+	background-color: rgba(34, 31, 30, 0.6);
+	padding: 40px;
+}
