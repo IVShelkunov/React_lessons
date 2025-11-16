@@ -1,0 +1,22 @@
+.app-header {
+text-align: center;
+background-color: rgba(24, 200, 189, 0.5);
+font-size: 3vw;
+padding: 20px;
+}
+.app-footer {
+text-align: center;
+background-color: rgba(90, 10, 19, 0.5);
+font-size: 3vw;
+padding: 20px;
+}
+nav a {
+margin: 0 15px;
+text-decoration: none;
+color: #333;
+}
+nav a.active {
+color: #007bff;
+font-weight: bold;
+text-decoration: underline;
+}
