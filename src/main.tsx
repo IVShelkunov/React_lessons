@@ -7,6 +7,7 @@ import { HomePage } from './pages/HomePage.tsx'
 import { NotFoundPage } from './pages/NotFoundPage.tsx'
 import { ProjectsPage } from './pages/ProjectsPage.tsx'
 import { ContactsPage } from './pages/ContactsPage.tsx'
+import { ProjectDetailPage } from './pages/ProjectDetailPage.tsx'
 const router = createBrowserRouter([
   {
     path: '/',
@@ -24,6 +25,10 @@ const router = createBrowserRouter([
       {
         path: 'contacts' ,
         element: <ContactsPage/>
+      },
+      {
+        path: 'projects/:projectId',
+        element: <ProjectDetailPage/>
       }
 
     ]

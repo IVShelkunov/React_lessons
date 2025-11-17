@@ -18,12 +18,12 @@ return (
       <Navigation/>
     </header>
     <main>
-        <Outlet/>
+        <Outlet context={{projects}}/>
     </main>
     <footer className='app-footer'>
       <p>© 2025</p>
     </footer>
-  </div>
+  </div> 
   );
 }
 

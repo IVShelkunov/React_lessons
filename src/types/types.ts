@@ -5,3 +5,6 @@ export interface Project {
 export type ProjectsContextTypes = {
 	projects: Project[]
 }
+export type ProjectParams = {
+	projectId: string
+}

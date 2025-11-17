@@ -12,7 +12,7 @@ export function ProjectsPage() {
 			<h1>Мои проекты</h1>
 			<ul>
 				{projects.map(project => (
-					<li key={project.id}><Link to={'/project'}>Проект #{project.id}</Link></li>
+					<li key={project.id}><Link to={`/projects/${project.id}`}>Проект {project.name}</Link></li>
 				))}
 			</ul>
 		</div>
