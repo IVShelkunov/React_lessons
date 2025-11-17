@@ -8,6 +8,8 @@ import { NotFoundPage } from './pages/NotFoundPage.tsx'
 import { ProjectsPage } from './pages/ProjectsPage.tsx'
 import { ContactsPage } from './pages/ContactsPage.tsx'
 import { ProjectDetailPage } from './pages/ProjectDetailPage.tsx'
+import { ProjectDescription } from './components/ProjectDescription.tsx'
+import { ProjectTech } from './components/ProjectTech.tsx'
 const router = createBrowserRouter([
   {
     path: '/',
@@ -28,7 +30,17 @@ const router = createBrowserRouter([
       },
       {
         path: 'projects/:projectId',
-        element: <ProjectDetailPage/>
+        element: <ProjectDetailPage/>,
+        children: [
+          {
+            index: true , 
+            element: <ProjectDescription/>
+          },
+          {
+            path: 'tech',
+            element: <ProjectTech/>
+          }
+        ]
       }
 
     ]
