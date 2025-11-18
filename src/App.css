@@ -1,0 +1,27 @@
+.layout {
+	display: flex;
+	flex-direction: column;
+}
+header, footer {
+	background-color: rgba(123, 20, 0, 0.6);
+	text-align: center;
+	padding: 30px;
+}
+main {
+	padding: 30px;
+}
+ul {
+	list-style-type: none;
+}
+a {
+	transition: 0.5s;
+	text-decoration: none;
+	color: black;
+}
+a:hover {
+
+	background-color: rgba(0, 17, 11, 0.4);
+}
+footer {
+	background:rgba(0, 17, 11, 0.7);
+}
