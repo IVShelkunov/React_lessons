@@ -11,8 +11,8 @@ export function ProjectDetailPage() {
 		<div className="project-detail">
 			<h1>{currentProject.name}</h1>
 			<nav className="tabs">
-				<NavLink to={`/projects/${projectId}`} end >Описание</NavLink>
-				<NavLink to={`/projects/${projectId}/tech`}>Технологии</NavLink>
+				<NavLink to={'.'} end >Описание</NavLink>
+				<NavLink to={'tech'}>Технологии</NavLink>
 			</nav>
 			<div className="show">
 				<Outlet/>

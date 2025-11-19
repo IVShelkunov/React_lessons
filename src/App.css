@@ -13,6 +13,14 @@ background-color: rgba(90, 10, 19, 0.5);
 font-size: 3vw;
 padding: 20px;
 }
+.nav-bar a {
+	text-decoration: none;
+	color: #333;
+	padding: 0 30px;
+}
+.nav-bar a.active {
+	text-decoration: underline;
+}
 main {
 	padding: 20px ;
 	background-color: #aaa;
@@ -20,6 +28,9 @@ main {
 }
 .projects ul {
 	list-style-type: none;
+}
+.projects a {
+	color: #333;
 }
 .tabs a {
 
