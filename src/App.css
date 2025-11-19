@@ -1,0 +1,57 @@
+body {
+	margin: 0;
+	padding: 0;
+}
+.layout-site {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+}
+header {
+	padding: 30px;
+	font-size: 2vw;
+	background-color: rgba(134, 223, 0, 0.6);
+}
+.layout-site  a {
+	text-decoration: none;
+	color: #333;
+	padding: 0 20px;
+}
+.layout-site  a:hover {
+	text-decoration: underline;
+}
+.layout-site main {
+	flex: 1;
+}
+footer {
+	padding: 40px;
+	background-color: rgba(40, 22,43, 1.0);
+	color: white;
+	text-align: center;
+	font-size: 1.5vw;
+}
+/*админка*/
+.dashboard-layout {
+	display: flex;
+	flex-direction: row;
+}
+.dashboard-layout nav {
+	display: flex;
+	flex-direction: column;
+	background-color:rgba(134, 223, 0, 0.6);
+	min-height: 100vh; 
+
+}
+.dashboard-layout a {
+	text-decoration: none;
+	color: #333;
+	padding: 10px;
+	transition: 0.2s;
+}
+.dashboard-layout a:hover {
+	background-color:rgba(134, 223, 0, 0.9); 
+	color: whitesmoke;
+}
+main {
+	padding: 20px;
+}
