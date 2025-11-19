@@ -1,3 +1,6 @@
+body {
+	margin: 0;
+}
 .app-header {
 text-align: center;
 background-color: rgba(24, 200, 189, 0.5);
@@ -10,13 +13,29 @@ background-color: rgba(90, 10, 19, 0.5);
 font-size: 3vw;
 padding: 20px;
 }
-nav a {
-margin: 0 15px;
+main {
+	padding: 20px ;
+	background-color: #aaa;
+	
+}
+.projects ul {
+	list-style-type: none;
+}
+.tabs a {
+
+padding: 5px 15px;
 text-decoration: none;
 color: #333;
 }
-nav a.active {
-color: #007bff;
+.tabs a.active {
 font-weight: bold;
-text-decoration: underline;
+background-color: whitesmoke;
+}
+.show {
+	padding: 10px;
+	background-color: whitesmoke;
+	margin-top: -1px;
+}
+.show p {
+	margin-top: 0;
 }

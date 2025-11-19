@@ -8,14 +8,16 @@ export function ProjectDetailPage() {
 	const currentProject = projects.find(project => project.id === Number(projectId));
 	if(currentProject) {
 		return(
-		<div>
+		<div className="project-detail">
 			<h1>{currentProject.name}</h1>
-			<nav>
+			<nav className="tabs">
 				<NavLink to={`/projects/${projectId}`} end >Описание</NavLink>
 				<NavLink to={`/projects/${projectId}/tech`}>Технологии</NavLink>
 			</nav>
-			<Outlet/>
-			<button onClick={() => navigate('/projects')}>Все проекты</button>
+			<div className="show">
+				<Outlet/>
+				<button onClick={() => navigate('/projects')}>Все проекты</button>
+			</div>
 		</div>
 		);
 	}

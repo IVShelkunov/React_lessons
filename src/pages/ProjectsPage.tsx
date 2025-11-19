@@ -8,7 +8,7 @@ import type { ProjectsContextTypes } from "../types/types";
 export function ProjectsPage() {
 	const {projects} = useOutletContext<ProjectsContextTypes>();
 	return (
-		<div>
+		<div className="projects">
 			<h1>Мои проекты</h1>
 			<ul>
 				{projects.map(project => (
