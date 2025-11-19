@@ -55,3 +55,33 @@ footer {
 main {
 	padding: 20px;
 }
+
+.setting-layout {
+	display: flex;
+	flex-direction: column;
+	background-color: rgba(12, 12, 12, 0.3);
+}
+.security-form {
+	display: flex;
+	flex-direction: column;
+	width: 30%;
+}
+.setting-layout a {
+	text-decoration: none;
+	color: #333;
+	margin: 10px;
+}
+.setting-layout a.active {
+	background-color: whitesmoke;
+}
+.setting-layout main {
+	background-color: whitesmoke;
+	margin-top: -1px;
+}
+.setting-layout .btn {
+	background-color: rgba(40, 22,43, 1.0);
+	color: whitesmoke;
+	cursor: pointer;
+	padding: 10px;
+	border-radius: 8px;
+}
