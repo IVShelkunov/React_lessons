@@ -15,7 +15,7 @@ export function LoginPage() {
 	return (
 		<form className="login" onSubmit={handleSubmit}>
 			<input type="text" placeholder="введите имя" value={inputValue} onChange={handleChangeInputValue}/>
-			<button type="submit">Войти</button>
+			<button type="submit" disabled={inputValue === ''} >Войти</button>
 		</form>
 	);
 }
