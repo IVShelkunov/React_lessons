@@ -4,7 +4,10 @@ export interface User {
 	role: UserRole
 }
 export type AuthContextType = {
-	user: User,
+	user: User | null,
 	login: (userData: User) => void,
 	logout: () => void
+}
+export type ProtectedRouteType = {
+	allowedRoles?: UserRole[]
 }

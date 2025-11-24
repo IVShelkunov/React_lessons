@@ -1,0 +1,52 @@
+* {
+	box-sizing: border-box;
+}
+body {
+	margin: 0;
+	padding: 0;
+}
+.layout {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+}
+header {
+	background-color: rgba(100, 134, 0, 0.5);
+}
+nav a , nav button{
+	transition: 0.3s;
+	display: inline-block;
+	text-decoration: none;
+	color: #333;
+	font-size: 25px;
+	font-weight: bolder;
+	padding: 20px 30px;
+	border: none;
+	
+}
+nav a:hover , nav button :hover {
+	background-color: rgba(100, 134, 0, 0.5);
+}
+nav button,.login-link  {
+	float: right;
+	background-color: rgba(0, 0,0, 0.0);
+	cursor: pointer;
+}
+main {
+	flex: 1;
+	padding:  20px;
+}
+.login-form {
+	display: flex;
+	flex-direction: column;
+}
+.login-form div {
+	padding: 10px 0;
+}
+
+footer {
+	background-color: rgba(30, 20, 56, 0.7);
+	text-align: center;
+	padding: 20px;
+	color: whitesmoke;
+}
