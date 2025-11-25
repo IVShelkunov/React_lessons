@@ -11,12 +11,15 @@ import { ProtectedRoute } from './components/ProtectedRoute.tsx'
 import { ProfilePage } from './pages/ProfilePage.tsx'
 import { AdminPage } from './pages/AdminPage.tsx'
 import { AccessDeniedPage } from './pages/AccessDeniedPage.tsx'
+import { NotFoundPage } from './pages/NotFoundPage.tsx'
 
 const router = createBrowserRouter([
   {
     path: '/',
     element: <Layout/>,
+    errorElement: <NotFoundPage/>,
     children: [
+      //публичные маршруты
       {
         index: true,
         element: <HomePage/>
@@ -25,6 +28,7 @@ const router = createBrowserRouter([
         path: '/login',
         element: <LoginPage/>
       },
+      //защищенные маршруты
       {
         element: <ProtectedRoute/>,
         children: [
@@ -34,6 +38,7 @@ const router = createBrowserRouter([
           }
         ]
       },
+          //админ
       {
         element: <ProtectedRoute allowedRoles={['admin']}/>,
         children: [
@@ -46,7 +51,7 @@ const router = createBrowserRouter([
       {
         path: 'access-denied',
         element: <AccessDeniedPage/>
-      }
+      },
     ]
   }
 ]);
