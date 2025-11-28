@@ -1,6 +1,6 @@
 import type { Post, User } from "../types/types";
 
-export const posts: Post[] = [
+export const initialPosts: Post[] = [
 	{id: 1 , title: 'React' , content: 'Hello I learning React!',authorId: 1 },
 	{id: 2 , title: 'HTML' , content: 'Hello practice HTML5.',authorId: 3 },
 	{id: 3 , title: 'CSS' , content: 'I want to know all CSS properties',authorId: 2 },
