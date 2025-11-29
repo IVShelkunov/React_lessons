@@ -1,8 +1,10 @@
 import { Link, useParams } from "react-router-dom";
 import type { PostParams } from "../types/types";
-import { posts, users } from "../data/data";
+import {users } from "../data/data";
+import { usePosts } from "../contexts/posts";
 
 export function PostDetailPage() {
+	const {posts} = usePosts();
 	const {postId} = useParams<PostParams>();
 	const selectedPost = posts.find(post => post.id === Number(postId));
 	if(selectedPost) {

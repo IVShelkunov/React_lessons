@@ -10,11 +10,12 @@ export function Layout() {
 					<NavLink to={'/'}>Главная</NavLink>
 					<NavLink to={'/blog'}>Блог</NavLink>
 					{user && <NavLink to={'/profile'} >Профиль</NavLink>}
-					{user? <button onClick={logout}>Выйти</button> : <Link to={'/login'}>Войти</Link>}
+					{user? <button className="logout" onClick={logout}>Выйти</button> : <Link className="log" to={'/login'}>Войти</Link>}
 				</nav>
+			</header>
 				<main><Outlet/></main>
 				<footer>2025 ©</footer>
-			</header>
+			
 		</div>
 	);
 }

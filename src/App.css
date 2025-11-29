@@ -1,0 +1,76 @@
+.layout-site {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+}
+.layout-site header {
+	background-color: rgba(95, 31, 207, 0.6);	
+}
+.layout-site nav a {
+	display: inline-block;
+	padding: 20px;
+	text-decoration: none;
+	color: #333;
+}
+
+.logout , .log {
+	float: right;
+	background-color: rgba(0, 0, 0, 0.0);
+	border: none;
+	display: inline-block;
+	padding: 20px;
+	cursor: pointer;
+}
+.layout-site main {
+	flex: 1;
+	
+}
+label {
+	display: block;
+}
+
+footer {
+	padding: 30px;
+	text-align: center;
+	background-color:rgba(69, 54, 55, 1);
+	color: white;
+
+}
+.home,.blog {
+	padding: 20px;
+}
+.blog ul {
+	list-style-type: none;
+}
+.blog a {
+	text-decoration: none;
+	color: #333;
+}
+.blog a:hover {
+	background-color: rgba(0, 0, 0, 0.2);
+}
+.profile {
+	display: grid;
+	grid-template-columns: 1fr 4fr;
+	grid-template-areas: 'menu header' 'menu main'
+}
+.profile h1 {
+	padding: 20px;
+	grid-area: header;
+}
+.profile aside {
+	grid-area: menu;
+	background-color: rgba(15, 150, 69, 0.7);
+}
+.profile main {
+	grid-area: main;
+	padding: 20px;
+}
+.profile nav {
+	display: flex;
+	flex-direction:column;
+	
+}
+.profile a:hover , .layout-site nav a:hover  {
+	background-color: rgba(0, 0, 0, 0.2);
+}

@@ -1,7 +1,8 @@
 import { useAuth } from "../contexts/auth";
-import { posts } from "../data/data";
+import { usePosts } from "../contexts/posts";
 
 export function MyPostsPage() {
+	const {posts,onDelete} = usePosts();
 	const {user} = useAuth();
 	return (
 		<div className="my-post">
@@ -11,6 +12,7 @@ export function MyPostsPage() {
 					<li key={post.id}>
 						<h4>{post.title}</h4>
 						<p>{post.content}</p>
+						<button onClick={() => onDelete(post.id)}>Удалить пост</button>
 					</li>
 				))}
 			</ul>

@@ -3,7 +3,6 @@ import { useAuth } from "../contexts/auth";
 
 export function ProfilePage() {
 	const {user} = useAuth();
-	
 		return (
 			<div className="profile">
 				<h1>Профиль пользователя {user.name}</h1>

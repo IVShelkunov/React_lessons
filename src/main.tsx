@@ -13,6 +13,8 @@ import { LoginPage } from './pages/LoginPage';
 import { ProtectedRoute } from './components/ProtectedRoute';
 import { ProfilePage } from './pages/ProfilePage';
 import { MyPostsPage } from './pages/MyPostsPage';
+import { PostsProvider } from './components/PostsProvider'
+import { CreatePostPage } from './pages/CreatePostPage'
 const router = createBrowserRouter([
   {
     path: '/',
@@ -45,6 +47,10 @@ const router = createBrowserRouter([
               {
                 index: true,
                 element: <MyPostsPage/>
+              },
+              {
+                path: 'create',
+                element: <CreatePostPage/>
               }
             ]
           },
@@ -58,7 +64,9 @@ const router = createBrowserRouter([
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <AuthProvider>
-    <RouterProvider router={router}/>
+      <PostsProvider>
+        <RouterProvider router={router}/>
+      </PostsProvider>
   </AuthProvider>
   </StrictMode>,
 )
