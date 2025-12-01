@@ -20,7 +20,7 @@ export function CreatePostPage() {
 				<input type="text" id="title" value={inputData.title} onChange={handleChangeInputData}/>
 				<label htmlFor="content">Напишите пост</label>
 				<textarea id="content" value={inputData.content} onChange={handleChangeInputData}/>
-				<button type="submit" >Создать</button>
+				<button type="submit" disabled={!isValidForm}>Создать</button>
 			</form>
 	);
 }
