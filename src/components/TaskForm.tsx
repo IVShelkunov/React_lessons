@@ -14,7 +14,7 @@ export function TaskForm() {
 		<form className="task-form" onSubmit={handleSubmit}>
 			<label htmlFor="task-text">Новая задача:</label>
 			<input type="text" id="task-text" value={inputValue} onChange={handleChangeInputValue}/>
-			<button type="submit">Добавить задачу</button>
+			<button type="submit" disabled={inputValue.trim() === ''}>Добавить задачу</button>
 		</form>
 	);
 
