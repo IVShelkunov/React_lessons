@@ -10,22 +10,26 @@ export function Cart() {
 		<div className="cart">
 			<h2>Корзина</h2>
 			{items.length === 0 ? <p>Корзина пуста</p> :
-				<table>
-					<tr>
-						{properties.map(property => (
-							<th>{property}</th>
-						))}
-					</tr>
-					{items.map(item => (
+				(<div>
+					<table>
 						<tr>
-							<td>{item.title}</td>
-							<td>{item.price}</td>
-							<td>{item.quantity}</td>
-							<td>{item.price * item.quantity}<button onClick={() => removeFromCart(item.id)}>🗑</button></td>
+							{properties.map(property => (
+								<th key={property}>{property}</th>
+							))}
 						</tr>
-					))}
-					<tr>Итого:{total} <button onClick={clearCart}>Очистить корзину🗑</button></tr>
-				</table>
+						{items.map(item => (
+							<tr key={item.id}>
+								<td>{item.title}</td>
+								<td>{item.price}</td>
+								<td>{item.quantity}</td>
+								<td>{item.price * item.quantity}<button onClick={() => removeFromCart(item.id)}>🗑</button></td>
+							</tr>
+						))}
+						<tr>Итого:{total}</tr>
+				
+						</table>
+						<button onClick={clearCart}>Очистить корзину🗑</button>
+				</div>)
 
 			}
 		</div>

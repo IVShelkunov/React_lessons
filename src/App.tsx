@@ -9,8 +9,10 @@ function App() {
     
       <div className='app'>
         <h1>Магазин</h1>
-        <ProductList/>
-        <Cart/>
+        <div className='store-container'>
+          <ProductList/>
+          <Cart/>
+        </div>
       </div>
     
   )
