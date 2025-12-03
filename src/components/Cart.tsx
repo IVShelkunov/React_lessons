@@ -8,6 +8,7 @@ export function Cart() {
 	const total = items.reduce((acc , currentItem) => currentItem.price * currentItem.quantity + acc, 0);
 	return (
 		<div className="cart">
+			<div className="cart-body">
 			<h2>Корзина</h2>
 			{items.length === 0 ? <p>Корзина пуста</p> :
 				(<div>
@@ -20,18 +21,19 @@ export function Cart() {
 						{items.map(item => (
 							<tr key={item.id}>
 								<td>{item.title}</td>
-								<td>{item.price}</td>
+								<td>${item.price}</td>
 								<td>{item.quantity}</td>
-								<td>{item.price * item.quantity}<button onClick={() => removeFromCart(item.id)}>🗑</button></td>
+								<td>${(item.price * item.quantity).toFixed(2)}<button onClick={() => removeFromCart(item.id)}>🗑</button></td>
 							</tr>
 						))}
-						<tr>Итого:{total}</tr>
+						<tr><td rowSpan={4}>Итого:{total.toFixed(2)}</td></tr>
 				
 						</table>
 						<button onClick={clearCart}>Очистить корзину🗑</button>
 				</div>)
 
 			}
+			</div>
 		</div>
 	);
 }
