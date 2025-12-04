@@ -1,0 +1,27 @@
+ul {
+  list-style-type: none;
+}
+.app {
+  display: flex;
+  flex-direction: row;
+}
+.crypto-list,.watch-list {
+  border: 2px solid black;
+  margin: 5px;
+  padding: 5px;
+}
+.crypto-list {
+  flex: 50%;
+}
+.watch-list {
+  flex: 50%;
+}
+.price {
+  display: inline-block;
+  color: rgba(18, 181, 26, 1);
+  min-width: 5em;
+}
+.name {
+  display: inline-block;
+
+}
