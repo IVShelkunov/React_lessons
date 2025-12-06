@@ -25,3 +25,7 @@ export interface ShowState {
 export interface ShowResultItemProps {
 	show: Show
 }
+//show details
+export type ShowParams = {
+	showId: string
+}

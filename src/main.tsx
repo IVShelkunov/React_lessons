@@ -5,6 +5,8 @@ import './App.css'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import { Layout } from './components/Layout';
 import { SearchPage } from './pages/SearchPage';
+import { ShowDetailPage } from './pages/ShowDetailPage'
+import { FavoritesPage } from './pages/FavoritesPage'
 const router = createBrowserRouter([
   {
     path: '/',
@@ -13,6 +15,14 @@ const router = createBrowserRouter([
       {
         index:true,
         element: <SearchPage/>
+      },
+      {
+        path: '/shows/:showId',
+        element: <ShowDetailPage/>
+      },
+      {
+        path: '/favorites',
+        element: <FavoritesPage/>
       }
     ]
   },

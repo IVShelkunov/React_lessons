@@ -11,13 +11,13 @@ export function ShowResultItem ({show}: ShowResultItemProps) {
 		setIsFavorite(prev => !prev);
 	}
 	return (
-		<li key={show.id} className="show-item">
+		<li className="show-item">
 			<div className="present">
 				<img src={show.image?.medium}/>
 				<h3>{show.name}</h3>
 			</div>
 			<div className="control">
-				<Link to={`/show/${show.id}`}>Подробнее</Link>
+				<Link to={`/shows/${show.id}`}>Подробнее</Link>
 				<button className={isFavorite ? 'favorite' : ''} onClick={() => handleToggleFavorites(show)}>☆</button>
 			</div>
 		</li>
