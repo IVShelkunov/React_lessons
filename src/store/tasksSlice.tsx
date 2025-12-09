@@ -26,7 +26,7 @@ export const tasksSlice = createSlice({
 			}
 		},
 		deleteTask: (state , action: PayloadAction<string>) => {
-			state.list.filter(task => task.id !== action.payload);
+			state.list = state.list.filter(task => task.id !== action.payload);
 		}
 	},
 	extraReducers: (buider) => {

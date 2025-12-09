@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux";
 import { useAppDispatch, useAppSelector } from "../store/hooks";
 import { useEffect, type ChangeEvent } from "react";
-import { fetchTasks, toggleTask } from "../store/tasksSlice";
+import { deleteTask, fetchTasks, toggleTask } from "../store/tasksSlice";
 import { TaskCreator } from "../components/TaskCreator";
 
 export function TasksPage() {
@@ -21,8 +21,8 @@ export function TasksPage() {
 					{taskList.map(task => (
 						<li key={task.id} className={task.completed ? 'completed' : ''}>
 							<span >{task.title}</span>
-							<input type="checkbox" onChange={() => dispatch(toggleTask(task.id))}/>
-							<button>❌</button>
+							<input type="checkbox" checked={task.completed} onChange={() => dispatch(toggleTask(task.id))}/>
+							<button onClick={() => dispatch(deleteTask(task.id))}>❌</button>
 						</li>
 					))}
 				</ul>

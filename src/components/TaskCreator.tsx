@@ -11,6 +11,7 @@ export function TaskCreator() {
 	const handleSubmit = (e:React.FormEvent<HTMLFormElement>) => {
 		e.preventDefault();
 		dispatch(addTask(inputValue));
+		setInputValue('');
 	}
 	return (
 		<form onSubmit={handleSubmit}>
