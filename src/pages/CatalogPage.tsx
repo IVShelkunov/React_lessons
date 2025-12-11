@@ -21,7 +21,7 @@ export function CatalogPage() {
 				{productList.map(product => (
 					<li key={product.id}>
 						<ProductItem product={product}/>
-						{favoritesList.includes(product)? <button onClick={() => dispatch(removeFromFavorites(product.id))} className="del-from-favorites">💔 Удалить</button> :
+						{favoritesList.some(fav => fav.id === product.id) ? <button onClick={() => dispatch(removeFromFavorites(product.id))} className="del-from-favorites">💔 Удалить</button> :
 							<button onClick={() => dispatch(addToFavorites(product))} className='add-favorites'>❤️ Добавить</button>
 						}
 					</li>
