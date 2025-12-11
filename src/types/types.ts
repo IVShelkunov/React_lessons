@@ -19,3 +19,6 @@ export interface ProductsState {
 export interface FavoritesState {
   items: IProduct[]
 }
+export type ProductItemProps = {
+  product: IProduct
+}

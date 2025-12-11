@@ -10,8 +10,8 @@ export function Layout() {
 					<NavLink to={'/'}>Каталог</NavLink>
 					<NavLink to={'/favorites'}>Избранное({favoritesList.length})</NavLink>
 				</nav>
-				<main><Outlet/></main>
 			</header>
+				<main><Outlet/></main>
 		</div>
 	);
 }

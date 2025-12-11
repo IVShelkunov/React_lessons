@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useAppDispatch, useAppSelector } from "../store/hooks";
 import { fetchProducts } from "../store/productsSlice";
 import { addToFavorites, removeFromFavorites } from "../store/favoritesSlice";
+import { ProductItem } from "../components/ProductItem";
 
 export function CatalogPage() {
 	const dispatch = useAppDispatch();
@@ -14,18 +15,20 @@ export function CatalogPage() {
 	},[]);
 	return (
 		<div className="catalog">
-			<ul>
+			<h2>Каталог товаров</h2>
+			{status === 'loading'? <div className="spinner"></div> : status === 'failed' ? <div className="error">{error}</div> : (
+				<ul>
 				{productList.map(product => (
 					<li key={product.id}>
-						<img src={product.image} />
-						<h3>{product.title}</h3>
-						{favoritesList.includes(product)? <button onClick={() => dispatch(addToFavorites(product))} className='add-favorites'>❤️</button> :
-							<button onClick={() => dispatch(removeFromFavorites(product.id))} className="del-from-favorites">💔</button>
+						<ProductItem product={product}/>
+						{favoritesList.includes(product)? <button onClick={() => dispatch(removeFromFavorites(product.id))} className="del-from-favorites">💔 Удалить</button> :
+							<button onClick={() => dispatch(addToFavorites(product))} className='add-favorites'>❤️ Добавить</button>
 						}
-						
 					</li>
 				))}
-			</ul>
+				</ul>
+			)}
+			
 		</div>
 	);
 }
