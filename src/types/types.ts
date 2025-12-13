@@ -11,9 +11,13 @@ export interface IProduct {
   image: string,
   rating: IRating
 }
+export interface CartItem extends IProduct {
+  quantity: number
+}
+type IStatus = 'idle' | 'loading' | 'succeeded' | 'failed'
 export interface ProductsState {
   items: IProduct[],
-  status: 'idle' | 'loading' | 'succeeded' | 'failed',
+  status: IStatus,
   error: string | null
 }
 export interface FavoritesState {
@@ -21,4 +25,12 @@ export interface FavoritesState {
 }
 export type ProductItemProps = {
   product: IProduct
+}
+export interface CartState {
+  cartList: CartItem[],
+  discount: number,
+  promoStatus: IStatus
+}
+export type CartItemProps = {
+  cartItem: CartItem
 }

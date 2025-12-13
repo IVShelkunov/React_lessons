@@ -1,6 +1,10 @@
 ul {
   list-style-type: none;
 }
+img {
+  max-width: 200px;
+  height: auto;
+}
 .spinner {
   width: 50px;
   height: 50px;
@@ -32,10 +36,13 @@ nav a {
 nav a:hover {
   background-color: rgba(0, 0, 0, 0.1);
 }
+.catalog h2 {
+  padding: 0 20px;
+}
 .catalog li {
   margin: 30px 0;
   background-color: whitesmoke;
-  padding: 10px;
+  padding: 30px;
 }
 .product-item {
   background-color: whitesmoke;
@@ -48,5 +55,33 @@ nav a:hover {
 .price {
   color: #00aa00;
   border: 3px double #00aa00;
+}
+.cart {
+  position: fixed;
+  top: 78px;
+  right: 0;
+  padding: 20px;
+  background-color: rgba(205, 123, 245, 0.5);
+}
+.spinner .cart-spin {
+  width: 20px;
+  height: 20px;
+}
+td {
+  padding: 5px;
+  border: 1px dotted blue;
+}
+.quantity {
+  display: inline-block;
+  padding: 5px;
+}
+.succes-promo {
+  animation: lightpromo 2s linear 1 ;
+  color: green;
+}
+@keyframes lightpromo {
+  0% {text-shadow: 1px 1px 3px green;}
+  50% {text-shadow:8px 8px 12px red; transform: scale(5.0) ;}
+  100% {text-shadow:1px 1px 3px green;}
 }
 

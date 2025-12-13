@@ -1,6 +1,7 @@
 import { configureStore } from "@reduxjs/toolkit";
 import productsReducer from './productsSlice';
 import favoritesReducer from './favoritesSlice';
+import cartReducer from './cartSlice';
 const loadFavoritesState = () => {
 	try {
 		const savedState = localStorage.getItem('favorites');
@@ -14,7 +15,8 @@ const loadFavoritesState = () => {
 export const store = configureStore({
 	reducer: {
 		products: productsReducer,
-		favorites: favoritesReducer
+		favorites: favoritesReducer,
+		cart: cartReducer
 	},
 	preloadedState: {
 		favorites: loadFavoritesState()

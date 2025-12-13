@@ -3,6 +3,7 @@ import { useAppDispatch, useAppSelector } from "../store/hooks";
 import { fetchProducts } from "../store/productsSlice";
 import { addToFavorites, removeFromFavorites } from "../store/favoritesSlice";
 import { ProductItem } from "../components/ProductItem";
+import { addToCart } from "../store/cartSlice";
 
 export function CatalogPage() {
 	const dispatch = useAppDispatch();
@@ -24,6 +25,7 @@ export function CatalogPage() {
 						{favoritesList.some(fav => fav.id === product.id) ? <button onClick={() => dispatch(removeFromFavorites(product.id))} className="del-from-favorites">💔 Удалить</button> :
 							<button onClick={() => dispatch(addToFavorites(product))} className='add-favorites'>❤️ Добавить</button>
 						}
+						<button onClick={() => dispatch(addToCart(product))}>🛒В корзину </button>
 					</li>
 				))}
 				</ul>
