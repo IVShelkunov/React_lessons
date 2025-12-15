@@ -1,1 +1,18 @@
+* {
+	box-sizing: border-box;
+}
+body {
+	padding: 0;
+	margin: 0;
+}
+ul {
+	list-style-type: none;
+}
 
+a {
+	text-decoration: none;
+	color: #333;
+}
+div {
+	padding: 20px;
+}
