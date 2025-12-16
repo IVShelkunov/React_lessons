@@ -7,11 +7,8 @@ export function UserDetailsPage() {
 	const {userId} = useParams<UserParams>();
 	const {data,isLoading,isError,error} = useQuery({
 		queryKey: ['user' , userId],
-		queryFn:() => {
-			if(userId) {
-				return fetchUserById(userId);
-			}
-		}
+		queryFn:() => fetchUserById(userId!),
+		enabled:!!userId
 	});
 	return (
 		<div className="details-page">

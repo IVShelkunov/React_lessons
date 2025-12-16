@@ -14,5 +14,5 @@ export interface IUser {
 	company: {name: string}
 }
 export type UserParams = {
-	userId: 'string'
+	userId: string
 }
