@@ -1,0 +1,9 @@
+{
+  "todos": [
+    {
+      "id": "2",
+      "title": "Настроить json-server",
+      "completed": false
+    }
+  ]
+}
