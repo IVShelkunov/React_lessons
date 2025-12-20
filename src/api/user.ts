@@ -7,13 +7,13 @@ export const getUser = async (userId: string): Promise<IUser> => {
 	return response.json();
 }
 //РЕГИСТРАЦИЯ
-export const registerUser = async (userData:RegisterData) => {
+export const registerUser = async (userData:RegisterData): Promise<IUser> => {
 	const response = await fetch(BASE_URL, {
 		method: 'POST',
 		headers: {
 			'Content-Type': 'application/json',
 		},
-		body: JSON.stringify(userData)
+		body: JSON.stringify({...userData, id: Date.now().toString()})
 	});
 	if (!response.ok) throw new Error('Ошибка создания');
 	return response.json();
@@ -40,7 +40,7 @@ export const deleteUser = async (id:string) => {
   	return response.json();
 }
 //логин
-export const loginUser = async (email:string) => {
+export const loginUser = async (email:string):Promise<IUser[]> => {
 	const response = await fetch(`${BASE_URL}?email=${email}`);
 	if(!response.ok) throw new Error('Ошибка сети');
 	return response.json();

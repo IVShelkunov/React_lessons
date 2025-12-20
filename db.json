@@ -3,14 +3,20 @@
     {
       "id": "1",
       "email": "admin@example.com",
-      "name": "Иван Админов",
-      "bio": "Люблю React и котиков"
+      "name": "Ivan Adminov",
+      "bio": "I learn CSS and LESS"
     },
     {
       "id": "2",
-      "email": "user@example.com",
-      "name": "Cергею Юзеров",
-      "bio": "Люблю HTML и Щенков"
+      "email": "jordison@example.com",
+      "name": "Joy Jordison",
+      "bio": "I drums fucker"
+    },
+    {
+      "name": "Ilya shelkunow",
+      "email": "Shelkunow48@gmail.com",
+      "bio": "I learn  React !",
+      "id": "1766174665543"
     }
   ]
 }

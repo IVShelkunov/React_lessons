@@ -9,3 +9,11 @@ export interface AuthState  {
   userId: string | null,
   isAuth: boolean
 }
+export type UserProfileCardProps = {
+  user: IUser,
+  onEdit: () => void
+}
+export type EditProfileFormProps = {
+  user: IUser,
+  onClose: () => void
+}
