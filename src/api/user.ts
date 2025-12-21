@@ -19,7 +19,7 @@ export const registerUser = async (userData:RegisterData): Promise<IUser> => {
 	return response.json();
 	
 }
-// обновление 
+// обновление данных
 export const updateUser = async (id: string , changes: Partial<IUser>) => {
 	const response = await fetch(`${BASE_URL}/${id}` , {
 		method: 'PATCH' , 

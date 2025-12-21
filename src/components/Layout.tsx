@@ -7,9 +7,9 @@ export function Layout() {
 	return (
 		<div className="layout">
 			<header>
-				<nav>
-					<NavLink to={'/'}>Главная</NavLink>
-					<NavLink to={'/profile'}>Профиль</NavLink>
+				<nav className='nav'>
+					<NavLink  to={'/'}>Главная</NavLink>
+					<NavLink  to={'/profile'}>Профиль</NavLink>
 					{isAuth ? <button onClick={() => dispatch(logout())}>Выйти</button> : <Link to={'/login'}>Вход</Link>}
 					
 				</nav>

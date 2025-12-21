@@ -4,10 +4,9 @@ export function LoginLayout() {
 	return (
 		<div className="login-layout">
 			<main><Outlet/></main>
-			<nav>
+			<nav >
 				<NavLink to={'.'} end>Вход</NavLink>
 				<NavLink to={'registration'}>Регистрация</NavLink>
-				
 			</nav>
 		</div>
 	);

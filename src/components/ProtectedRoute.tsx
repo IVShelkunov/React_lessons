@@ -1,4 +1,3 @@
-import type { ReactNode } from "react";
 import { useAppSelector } from "../store/hooks";
 import { Navigate, Outlet } from "react-router-dom";
 
