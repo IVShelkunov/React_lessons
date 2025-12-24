@@ -1,0 +1,22 @@
+{
+  "notes": [
+    {
+      "id": "1",
+      "title": "Изучить React Query",
+      "category": "work",
+      "date": "2025-10-24"
+    },
+    {
+      "id": "2",
+      "title": "Купить молоко",
+      "category": "personal",
+      "date": "2025-10-25"
+    },
+    {
+      "title": "Покормить кошку",
+      "category": "personal",
+      "id": "1766609367507",
+      "date": "2025-11-3"
+    }
+  ]
+}
