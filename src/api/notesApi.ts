@@ -1,13 +1,12 @@
 import type { CreateNoteData, INote } from "../types/types";
 import { api } from "./instance"
 //получение заметок
-export const fetchNotes = async (category?: string):Promise<INote[]> => {
-	if(category) {
-		const response = await api.get<INote[]>('/notes' , {params: {category}});
-		return response.data;
-	}
-	const response = await api.get<INote[]>('/notes');
-	return response.data;
+export const fetchNotes = async (category?: string): Promise<INote[]> => {
+    // Если category придет undefined, Axios сам сделает запрос просто на '/notes'
+    const response = await api.get<INote[]>('/notes', { 
+        params: { category } 
+    });
+    return response.data;
 }
 //создание заметки 
 export const createNote = async (note:CreateNoteData):Promise<INote> => {
