@@ -1,0 +1,21 @@
+body {
+  background-color: rgba(204, 156, 61, 1);
+}
+button {
+  margin: 10px;
+}
+ul {
+  list-style-type: none;
+}
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+
+}
+.note-list {
+  flex: 1;
+}
+form {
+  padding: 30px;
+}
