@@ -1,0 +1,24 @@
+body {
+  background-color: rgba(39, 20, 166, 0.6);
+  font-size: 1.5em;
+  margin: 0;
+  padding: 0;
+}
+ul {
+  list-style-type: none;
+}
+button {
+  background-color: rgba(0, 0, 0, 0.0);
+  border: none;
+  cursor: pointer;
+}
+span {
+  background-color: white;
+  padding: 5px;
+}
+header {
+  background-color: rgba(119, 30, 133, 1);
+  text-align: center ;
+  color: white;
+  padding: 25px;
+}
