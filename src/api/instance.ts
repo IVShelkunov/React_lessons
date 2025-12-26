@@ -28,5 +28,7 @@ api.interceptors.response.use(
 		} else {
 			console.error('Ошибка настройки запроса:', error.message); //ошибка в запросе
 		}
+		return Promise.reject(error);
 	}
+
 );
