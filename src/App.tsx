@@ -1,14 +1,16 @@
 import './App.css'
+import { FilterPanel } from './components/FilterPanel'
+import { TaskBoard } from './components/TaskBoard'
+
 
 function App() {
   
 
   return (
-    <>
-      <div>
-        newLessons
+      <div className='app'>
+        <FilterPanel/>
+        <TaskBoard/>
       </div>
-    </>
   )
 }
 

@@ -1,0 +1,35 @@
+* {
+  box-sizing: border-box;
+}
+ul {
+  list-style-type: none;
+}
+header {
+  background-color: rgba(11, 124, 156, 1);
+  font-size: 20px;
+}
+nav a {
+  text-decoration: none;
+  color: white;
+  display: inline-block;
+  padding: 10px 30px;
+}
+nav a:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+main {
+  padding: 20px;
+}
+.filter {
+  margin: 0 0 10px;
+}
+.tasks {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+.tasks div {
+  flex: 33%;
+  background-color: rgba(212, 159, 203, 0.5);
+  padding: 10px;
+}

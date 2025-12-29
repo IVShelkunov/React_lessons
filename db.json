@@ -1,0 +1,40 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "name": "Ilya",
+      "avatar": "👨‍💻"
+    },
+    {
+      "id": "2",
+      "name": "Max",
+      "avatar": "🦸‍♂️"
+    }
+  ],
+  "tasks": [
+    {
+      "id": "1",
+      "title": "Настроить Axios",
+      "status": "done",
+      "assigneeId": "1"
+    },
+    {
+      "id": "2",
+      "title": "Сверстать Канбан",
+      "status": "in_progress",
+      "assigneeId": "1"
+    },
+    {
+      "id": "3",
+      "title": "Выучить React Hook Form",
+      "status": "todo",
+      "assigneeId": "2"
+    },
+    {
+      "title": "Повторить TanstackQuery",
+      "assigneeId": "1",
+      "id": "1767038225845",
+      "status": "todo"
+    }
+  ]
+}
