@@ -1,14 +1,13 @@
 import './App.css'
+import { LoginForm } from './components/LoginForm'
 
 function App() {
   
 
   return (
-    <>
-      <div>
-        newLessons
-      </div>
-    </>
+    <div className='app'>
+      <LoginForm/>
+    </div>
   )
 }
 
