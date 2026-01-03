@@ -1,0 +1,61 @@
+.layout {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+}
+.layout main {
+	flex: 1;
+	padding: 20px;
+}
+.layout header {
+	background-color: rgba(22, 48, 240, 0.6);
+}
+.layout .app-nav-link {
+	display: inline-block;
+	text-decoration: none;
+	color: black;
+	padding: 25px 30px;
+}
+.layout .app-nav-link:hover,.layout nav button:hover {
+	background-color: rgba(0, 0, 0, 0.3);
+	color: white;
+}
+
+
+.layout nav button, .login-link {
+	float: right;
+}
+.layout nav button {
+	display: inline-block;
+	padding: 25px;
+	border-color: rgba(0, 0, 0, 0.0);
+	background-color: rgba(0, 0, 0, 0.0);
+	cursor: pointer;
+}
+footer {
+	padding: 20px;
+	background-color: rgba(31, 32, 36, 1);
+	text-align: center;
+	color: white;
+}
+
+.login-nav-link {
+	text-decoration: none;
+	display: inline-block;
+	color: black;
+	padding: 10px 30px;
+}
+.login-layout .active {
+	background-color: rgba(71, 107, 74, 1);
+}
+
+.login-layout button {
+	margin-top: 10px;
+}
+label {
+	display: block;
+}
+.error {
+	color: red;
+	font-weight: bold;
+}
