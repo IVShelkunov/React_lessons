@@ -11,7 +11,8 @@ export const RegisterPage = () => {
 		name: string,
 		email: string,
 		password: string,
-		confirmPassword: string
+		confirmPassword: string,
+		showPassword: boolean
 	}
 	const dispatch = useAppDispatch();
 	const navigate = useNavigate();
@@ -26,13 +27,14 @@ export const RegisterPage = () => {
 	const onSubmit: SubmitHandler<IRegForm> = async (regData: IRegForm) => {
 		try {
 			const {name,email,password} = regData;
-			regMutate.mutate({name,email,password});
+			await regMutate.mutate({name,email,password});
 		} catch(err) {
 			if(err instanceof Error) {
 				setError('root' , {message: err.message});
 			}
 		}
 	}
+	const showPassword = watch('showPassword');
 	
 	return (
 		<div className="register">
@@ -54,7 +56,7 @@ export const RegisterPage = () => {
 				</div>
 				<div className="form-group">
 					<label htmlFor="password">придумайте пароль:</label>
-					<input id="password" type="password" {...register('password' , {
+					<input id="password" type={showPassword? 'text': 'password'} {...register('password' , {
 						required: 'введите пароль',
 						minLength: {value: 6 , message: 'пароль должен быть не менее 6 символов'}
 					})}/>
@@ -62,11 +64,15 @@ export const RegisterPage = () => {
 				</div>
 				<div className="form-group">
 					<label htmlFor="confirmPassword">введите пароль еще раз:</label>
-					<input id="confirmPassword" type="password" {...register('confirmPassword' , {
+					<input id="confirmPassword" type={showPassword? 'text': 'password'} {...register('confirmPassword' , {
 						required: 'введите пароль',
 						validate: (value) => value === watch('password') || 'пароли не совпадают'
 					})}/>
 					{errors.confirmPassword && <div className="error">{errors.confirmPassword.message}</div>}
+				</div>
+				<div className="form-group">
+					<label htmlFor="showPass" ></label>
+					<input type="checkbox" id="showPass" {...register('showPassword')}/>
 				</div>
 				<button type="submit">Зарегистрироваться</button>
 			</form>
