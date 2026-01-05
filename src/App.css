@@ -1,3 +1,6 @@
+ul {
+	list-style-type: none;
+}
 .layout {
 	display: flex;
 	flex-direction: column;
@@ -58,4 +61,19 @@ label {
 .error {
 	color: red;
 	font-weight: bold;
+}
+.low {
+	background-color: green;
+}
+.medium {
+	background-color: yellow;
+	font-weight: bold;
+}
+.high {
+	background-color: red;
+	font-weight: bolder;
+}
+.close {
+	
+	color: gray;
 }

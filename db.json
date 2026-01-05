@@ -2,15 +2,44 @@
   "users": [
     {
       "id": "1",
-      "email": "admin@test.com",
-      "password": "123456",
-      "name": "Admin"
+      "email": "user@test.com",
+      "password": "123",
+      "name": "User"
     },
     {
       "name": "Ilya",
       "email": "Shelkunow48@gmail.com",
       "password": "desant777",
-      "id": "1767380558836"
+      "id": "1767523569057"
+    }
+  ],
+  "tickets": [
+    {
+      "id": "1",
+      "title": "Не работает принтер",
+      "description": "Зажевало бумагу",
+      "priority": "low",
+      "isUrgent": false,
+      "status": "open",
+      "userId": "1"
+    },
+    {
+      "title": "не работает USB",
+      "description": "не подключается мышь и другие устройства",
+      "priority": "low",
+      "status": "open",
+      "userId": "1",
+      "id": "1767610259135"
+    },
+    {
+      "title": "Не работает блок питания",
+      "description": "Не поступает питание на ПК",
+      "priority": "high",
+      "isUrgent": true,
+      "urgentReason": "Невозможно запустить ПК",
+      "status": "close",
+      "userId": "1767523569057",
+      "id": "1767613450560"
     }
   ]
 }

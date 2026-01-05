@@ -13,6 +13,8 @@ import { LoginPage } from './pages/LoginPage.tsx'
 import { ProtectedRoute } from './components/ProtectedRoute.tsx'
 import { ProfilePage } from './pages/ProfilePage.tsx'
 import { RegisterPage } from './pages/RegisterPage.tsx'
+import { CreateTicketPage } from './pages/CreateTicketPage.tsx'
+import { DashboardPage } from './pages/DashboardPage.tsx'
 const queryClient = new QueryClient();
 const router = createBrowserRouter([
   {
@@ -43,6 +45,14 @@ const router = createBrowserRouter([
           {
             path: 'profile',
             element: <ProfilePage/>
+          },
+          {
+            path: 'tickets',
+            element: <DashboardPage/>
+          },
+          {
+            path: 'create',
+            element: <CreateTicketPage/>
           }
         ]
       }

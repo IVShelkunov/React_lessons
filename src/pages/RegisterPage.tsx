@@ -71,7 +71,7 @@ export const RegisterPage = () => {
 					{errors.confirmPassword && <div className="error">{errors.confirmPassword.message}</div>}
 				</div>
 				<div className="form-group">
-					<label htmlFor="showPass" ></label>
+					<label style={{display:'inline-block'}} htmlFor="showPass">{showPassword ? 'скрыть' : 'показать'} пароль</label>
 					<input type="checkbox" id="showPass" {...register('showPassword')}/>
 				</div>
 				<button type="submit">Зарегистрироваться</button>
