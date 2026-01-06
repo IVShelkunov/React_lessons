@@ -5,30 +5,20 @@ import { createTicket } from "../api/ticketApi";
 import { useNavigate } from "react-router-dom";
 import { useAppSelector } from "../store/hooks";
 import { useEffect } from "react";
+import { createTicketSchema, type CreateTicketFormValues } from "../schemas/ticket";
+import { zodResolver } from "@hookform/resolvers/zod";
 
 export const CreateTicketPage = () => {
 	
-	interface ICreateTicketForm {
-		title: string,
-		description: string,
-		priority:  PriorityType,
-		isUrgent: boolean,
-		urgentReason: string
-	}
+	
 	const userId = useAppSelector(state => state.auth.user?.id);
 	const navigate = useNavigate();
 	const priorityList: PriorityType[] = ['low', 'medium' , 'high'];
 	const priorityName = (priority:PriorityType):string => {
 		return priority === 'low'? 'низкий': priority === 'medium'? 'средний':'высокий';
 	}
-	const {register , handleSubmit,watch,formState: {errors},setError,setValue} = useForm<ICreateTicketForm>({
-		defaultValues: {
-			title: '',
-			description: '',
-			priority: 'low',
-			isUrgent: false,
-			urgentReason: ''
-		}
+	const {register , handleSubmit,watch,formState: {errors},setError,setValue} = useForm<CreateTicketFormValues>({
+		resolver: zodResolver(createTicketSchema)
 	});
 	const [priority , isUrgent] = watch(['priority' , 'isUrgent']);
 	const showUrgentCheckbox = priority === 'high';
@@ -42,7 +32,7 @@ export const CreateTicketPage = () => {
 			setError('root',{message: e.message});
 		}
 	});
-	const onSubmit: SubmitHandler<ICreateTicketForm> = (createTicketData:ICreateTicketForm) => {
+	const onSubmit: SubmitHandler<CreateTicketFormValues> = (createTicketData:CreateTicketFormValues) => {
 		createTicketMutate.mutate({...createTicketData, status: 'open' , userId: userId!});
 	}
 	useEffect(() => {
@@ -56,17 +46,12 @@ export const CreateTicketPage = () => {
 			<form onSubmit={handleSubmit(onSubmit)}>
 				<div>
 					<label htmlFor="title">название заявки:</label>
-					<input id="title" type="text" {...register('title' , {
-						required: 'введите название!'
-					})}/>
+					<input id="title" type="text" {...register('title')}/>
 					{errors.title && <div className="error">{errors.title.message}</div>}
 				</div>
 				<div>
 					<label htmlFor="description">описание:</label>
-					<input id="description" type="text" {...register('description' , {
-						required: 'введите описание!',
-						minLength: {value: 10 , message: 'описание должно быть не менее 10 символов'}
-					})}/>
+					<textarea id="description"  {...register('description')}/>
 					{errors.description && <div className="error">{errors.description.message}</div>}
 				</div>
 				<div>
@@ -86,9 +71,7 @@ export const CreateTicketPage = () => {
 				{showReasonInput && (
 					<div>
 						<label>опишите почему это срочно?</label>
-						<textarea {...register('urgentReason',{
-							required: 'напишите причину срочности!'
-						})}/>
+						<textarea {...register('urgentReason')}/>
 					</div>
 				)}
 				<button type="submit">создать заявку</button>

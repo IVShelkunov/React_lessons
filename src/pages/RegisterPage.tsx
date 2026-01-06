@@ -5,15 +5,11 @@ import { registerUser } from "../api/authApi";
 import { useAppDispatch } from "../store/hooks";
 import { setCredentials } from "../store/authSlice";
 import { useNavigate } from "react-router-dom";
+import { registerSchema, type RegisterFormValues } from "../schemas/authSchema";
+import { zodResolver } from "@hookform/resolvers/zod";
 
 export const RegisterPage = () => {
-	interface IRegForm {
-		name: string,
-		email: string,
-		password: string,
-		confirmPassword: string,
-		showPassword: boolean
-	}
+	
 	const dispatch = useAppDispatch();
 	const navigate = useNavigate();
 	const regMutate = useMutation({
@@ -23,11 +19,13 @@ export const RegisterPage = () => {
 			navigate('/profile');
 		}
 	});
-	const {register , handleSubmit , formState: {errors} , watch,setError} = useForm<IRegForm>();
-	const onSubmit: SubmitHandler<IRegForm> = async (regData: IRegForm) => {
+	const {register , handleSubmit , formState: {errors} , watch,setError} = useForm<RegisterFormValues>({
+		resolver: zodResolver(registerSchema)
+	});
+	const onSubmit: SubmitHandler<RegisterFormValues> = async (regData: RegisterFormValues) => {
 		try {
 			const {name,email,password} = regData;
-			await regMutate.mutate({name,email,password});
+			await regMutate.mutateAsync({name,email,password});
 		} catch(err) {
 			if(err instanceof Error) {
 				setError('root' , {message: err.message});
@@ -41,33 +39,22 @@ export const RegisterPage = () => {
 			<form noValidate onSubmit={handleSubmit(onSubmit)}>
 				<div className="form-group">
 					<label htmlFor="name">введите имя:</label>
-					<input id="name" type="text" {...register('name' , {
-						required: 'введите имя'
-					})}/>
+					<input id="name" type="text" {...register('name')}/>
 					{errors.name && <div className="error">{errors.name.message}</div>}
 				</div>
 				<div className="form-group">
 					<label htmlFor="email">введите email:</label>
-					<input id="email" type="email" {...register('email' , {
-						required: 'введите email',
-						validate: (value) => value.includes('@') || 'поле должно содержать "@"'
-					})}/>
+					<input id="email" type="email" {...register('email')}/>
 					{errors.email && <div className="error">{errors.email.message}</div>}
 				</div>
 				<div className="form-group">
 					<label htmlFor="password">придумайте пароль:</label>
-					<input id="password" type={showPassword? 'text': 'password'} {...register('password' , {
-						required: 'введите пароль',
-						minLength: {value: 6 , message: 'пароль должен быть не менее 6 символов'}
-					})}/>
+					<input id="password" type={showPassword? 'text': 'password'} {...register('password')}/>
 					{errors.password && <div className="error">{errors.password.message}</div>}
 				</div>
 				<div className="form-group">
 					<label htmlFor="confirmPassword">введите пароль еще раз:</label>
-					<input id="confirmPassword" type={showPassword? 'text': 'password'} {...register('confirmPassword' , {
-						required: 'введите пароль',
-						validate: (value) => value === watch('password') || 'пароли не совпадают'
-					})}/>
+					<input id="confirmPassword" type={showPassword? 'text': 'password'} {...register('confirmPassword')}/>
 					{errors.confirmPassword && <div className="error">{errors.confirmPassword.message}</div>}
 				</div>
 				<div className="form-group">
