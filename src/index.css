@@ -1,3 +1,5 @@
 body {
-	background-color: rgba(90, 30, 150, 0.4);
+	background-image:url('../public/background.jpg');
+	background-size: cover;
+	color: white;
 }

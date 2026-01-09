@@ -1,0 +1,42 @@
+{
+  "registrations": [
+    {
+      "fullName": "Илья Шелкунов",
+      "email": "Shelkunow48@gmail.com",
+      "age": 33,
+      "ticketType": "vip",
+      "universityName": "",
+      "dietaryRestrictions": "",
+      "airportTransfer": true,
+      "isAgree": true,
+      "id": "1767901091716"
+    },
+    {
+      "fullName": "Алексей Сафронов",
+      "email": "test@mail.ru",
+      "age": 43,
+      "ticketType": "standard",
+      "isAgree": true,
+      "id": "1767905571426"
+    },
+    {
+      "fullName": "Владимир Кузнецов",
+      "email": "VladTest@gmail.com",
+      "age": 36,
+      "ticketType": "vip",
+      "universityName": "",
+      "dietaryRestrictions": "",
+      "airportTransfer": true,
+      "isAgree": true,
+      "id": "1767954285784"
+    },
+    {
+      "fullName": "Дмитрий Сорокин",
+      "email": "sds@mail.ru",
+      "age": 30,
+      "ticketType": "standard",
+      "isAgree": true,
+      "id": "1767967247797"
+    }
+  ]
+}
