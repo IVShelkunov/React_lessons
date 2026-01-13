@@ -1,7 +1,7 @@
 import { Link, NavLink, Outlet } from "react-router-dom";
 import { useAppDispatch, useAppSelector } from "../store/hooks";
 import { logout } from "../store/authSlice";
-
+import '../App.css'
 
 export const Layout = () => {
 	const dispatch = useAppDispatch();
@@ -13,7 +13,7 @@ export const Layout = () => {
 					<NavLink to={'/'}>Главная</NavLink>
 					<NavLink to={'/posts'}>Все посты</NavLink>
 					<NavLink to={'/profile'}>Профиль</NavLink>
-					{isAuth ? <button onClick={() => dispatch(logout())}>Выйти</button>:<Link to={'/login'}>Вход</Link>}
+					{isAuth ? <button className="logout" onClick={() => dispatch(logout())}>Выйти</button>:<Link className="log" to={'/login'}>Вход</Link>}
 				</nav>
 			</header>
 			<main><Outlet/></main>

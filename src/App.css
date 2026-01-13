@@ -1,0 +1,81 @@
+.layout {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+}
+.layout header {
+	background-color: rgba(95, 31, 207, 0.6);	
+}
+.layout nav a {
+	display: inline-block;
+	padding: 20px;
+	text-decoration: none;
+	color: #333;
+}
+
+.logout , .log {
+	float: right;
+	background-color: rgba(0, 0, 0, 0.0);
+	border: none;
+	display: inline-block;
+	padding: 20px;
+	cursor: pointer;
+}
+.layout main {
+	flex: 1;
+	
+}
+.login-layout {
+	padding: 20px;
+}
+label {
+	display: block;
+}
+
+footer {
+	padding: 30px;
+	text-align: center;
+	background-color:rgba(69, 54, 55, 1);
+	color: white;
+
+}
+.home {
+	padding: 20px;
+}
+ ul {
+	list-style-type: none;
+}
+ a , .logout {
+	text-decoration: none;
+	color: #333;
+}
+ a:hover,.logout:hover {
+	background-color: rgba(0, 0, 0, 0.2);
+}
+.profile {
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: row;
+	align-items: stretch;
+}
+.profile h1 {
+	padding: 20px;
+	
+}
+.profile a {
+	border-radius: 20px;
+	margin: 10px;
+	background-color: rgba(15, 150, 69, 0.7);
+}
+.profile a:hover {
+	background-color: rgba(15, 150, 69, 0.9);
+}
+.profile main {
+	
+	padding: 20px;
+}
+.profile nav {
+	display: flex;
+	flex-direction:column;
+	
+}
