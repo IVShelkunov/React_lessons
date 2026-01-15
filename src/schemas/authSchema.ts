@@ -26,3 +26,13 @@ export const registerSchema = z.object({
 });
 export type RegisterFormValues = z.infer<typeof registerSchema>;
 
+//смена аватара 
+const MAX_FILE_SIZE = 5 * 1024 * 1024; // 5MB
+const ACCEPTED_IMAGE_TYPES = ["image/jpeg", "image/jpg", "image/png", "image/webp"];
+export const changeAvatarSchema = z.object({
+	avatar: z.custom<FileList>()
+	.refine(files => files.length === 1,'вы не выбрали файл')
+	.refine(files => files?.[0]?.size <= MAX_FILE_SIZE , 'Максимальный размер файла 5MB.')
+	.refine(files => ACCEPTED_IMAGE_TYPES.includes(files?.[0]?.type), 'Поддерживаются только форматы .jpg, .jpeg, .png и .webp.')
+});
+export type ChangeAvatarFormValues = z.infer<typeof changeAvatarSchema>;

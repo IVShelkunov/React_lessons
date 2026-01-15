@@ -19,6 +19,7 @@ import { UserPostsPage } from './pages/UserPostsPage'
 import { PostCreatePage } from './pages/PostCreatePage'
 import { AllPostsPage } from './pages/AllPostsPage'
 import { PostDetailPage } from './pages/PostDetailPage'
+import { ChangeAvatarPage } from './pages/ChangeAvatarPage'
 const queryClient = new QueryClient();
 const router = createBrowserRouter([
   {
@@ -76,6 +77,10 @@ const router = createBrowserRouter([
               {
                 path: 'create',
                 element: <PostCreatePage/>
+              },
+              {
+                path: 'changeAvatar',
+                element: <ChangeAvatarPage/>
               }
             ]
           }

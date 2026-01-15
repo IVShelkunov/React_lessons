@@ -5,14 +5,39 @@
       "lastName": "Шелкунов",
       "email": "Shelkunow48@gmail.com",
       "password": "desant777",
-      "id": "1768228488198"
+      "id": "1768228488198",
+      "avatar": "/uploads/1768420168061-bgs.jpg"
     },
     {
       "firstName": "Дмитрий ",
       "lastName": "Дорохов",
       "email": "test@mail.ru",
       "password": "123456",
-      "id": "1768244559106"
+      "id": "1768244559106",
+      "avatar": "/uploads/1768414010741-cat.jpg"
+    },
+    {
+      "firstName": "Сергей",
+      "lastName": "Мешков",
+      "email": "Test2@gmail.com",
+      "password": "vasya777",
+      "id": "1768399998683"
+    },
+    {
+      "firstName": "John",
+      "lastName": "Travolta",
+      "email": "Travolta@gmail.com",
+      "password": "qwerty",
+      "id": "1768400296292",
+      "avatar": "../images/default.jpg"
+    },
+    {
+      "firstName": "Jimmy",
+      "lastName": "Page",
+      "email": "Jpage1974@gmail.com",
+      "password": "qwertyu",
+      "id": "1768418886495",
+      "avatar": "/uploads/1768419050624-c1.jpg"
     }
   ],
   "posts": [

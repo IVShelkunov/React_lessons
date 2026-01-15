@@ -16,7 +16,7 @@ export const RegisterPage = () => {
 	});
 	const showPass = watch('showPassword');
 	const registerMutation = useMutation({
-		mutationFn: (regData: Omit<IUser , 'id'>) => regUser(regData),
+		mutationFn: (regData: Omit<IUser , 'id' | 'avatar'>) => regUser(regData),
 		onSuccess: (user) => {
 			dispatch(login(user));
 			navigate('/');
