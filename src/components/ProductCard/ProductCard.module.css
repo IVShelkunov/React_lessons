@@ -1,0 +1,23 @@
+.card {
+	padding: 20px;
+	display: block;
+	margin: 10px;
+	background-color: white;
+	cursor: pointer;
+	border-radius: 20px;
+}
+.active {
+	background-color: blueviolet;
+}
+.outStock {
+	background-color: grey;
+	opacity: 0.5;
+	cursor: default;
+}
+.productName {
+	font-weight: bold;
+	color: black;
+}
+.price {
+	color: green;
+}
