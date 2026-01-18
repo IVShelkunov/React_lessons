@@ -7,7 +7,7 @@ import { regUser } from "../api/userApi";
 import { useAppDispatch } from "../store/hooks";
 import { login } from "../store/authSlice";
 import { useNavigate } from "react-router-dom";
-
+import styles from './FormStyles/Form.module.css';
 export const RegisterPage = () => {
 	const dispatch = useAppDispatch();
 	const navigate = useNavigate();
@@ -30,39 +30,41 @@ export const RegisterPage = () => {
 		await registerMutation.mutateAsync(dataToSend);
 	}
 	return(
-		<div className="registration">
+		<div className={styles.container}>
 			<form noValidate onSubmit={handleSubmit(onSubmit)}>
-				<div>
-					<label>имя:</label>
+				<div className={styles.formGroup}>
+					<label className={styles.label}>имя:</label>
 					<input type="text"{...register('firstName')}/>
 					{errors.firstName && <div className="error">{errors.firstName.message}</div>}
 				</div>
-				<div>
-					<label>фамилия:</label>
+				<div className={styles.formGroup}>
+					<label className={styles.label}>фамилия:</label>
 					<input type="text"{...register('lastName')}/>
 					{errors.firstName && <div className="error">{errors.firstName.message}</div>}
 				</div>
-				<div>
-					<label>email:</label>
+				<div className={styles.formGroup}>
+					<label className={styles.label}>email:</label>
 					<input type="email"{...register('email')}/>
 					{errors.email && <div className="error">{errors.email.message}</div>}
 				</div>
-				<div>
-					<label>пароль:</label>
+				<div className={styles.formGroup}>
+					<label className={styles.label}>пароль:</label>
 					<input type={showPass ? 'text': 'password'}{...register('password')}/>
 					{errors.password && <div className="error">{errors.password.message}</div>}
 				</div>
-				<div>
-					<label>подтвердите пароль:</label>
+				<div className={styles.formGroup}>
+					<label className={styles.label}>подтвердите пароль:</label>
 					<input type={showPass ? 'text': 'password'}{...register('confirmPassword')}/>
 					{errors.confirmPassword && <div className="error">{errors.confirmPassword.message}</div>}
 				</div>
-				<div>
+				<div className={styles.formGroup}>
 					<label>показать пароль</label>
 					<input type="checkbox"{...register('showPassword')}/>
 				</div>
-				{errors.root && <div className="error">{errors.root.message}</div>}
-				<button type="submit">{registerMutation.isPending? 'Регистрируем': 'Зарегистрироваться'}</button>
+				<div className={styles.formGroup}>
+					{errors.root && <div className="error">{errors.root.message}</div>}
+					<button type="submit">{registerMutation.isPending? 'Регистрируем': 'Зарегистрироваться'}</button>
+				</div>
 			</form>
 		</div>
 	);

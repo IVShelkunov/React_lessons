@@ -1,11 +1,11 @@
 import { useForm, type SubmitHandler } from "react-hook-form";
-import { loginSchema, type LoginFormValues } from "../schemas/authSchema";
+import { loginSchema, type LoginFormValues } from "../../schemas/authSchema";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { loginUser } from "../api/userApi";
-import { useAppDispatch } from "../store/hooks";
-import { login } from "../store/authSlice";
+import { loginUser } from "../../api/userApi";
+import { useAppDispatch } from "../../store/hooks";
+import { login } from "../../store/authSlice";
 import { useNavigate } from "react-router-dom";
-
+import styles from '../FormStyles/Form.module.css'
 
 export const LoginPage = () => {
 	const navigate = useNavigate();
@@ -27,24 +27,26 @@ export const LoginPage = () => {
 		}
 	}
 	return (
-		<div className="login">
+		<div className={styles.container}>
 			<form noValidate onSubmit={handleSubmit(onSubmit)}>
-				<div>
-					<label>email:</label>
+				<div className={styles.formGroup}>
+					<label className={styles.label}>email:</label>
 					<input type="email"{...register('email')}/>
 					{errors.email && <div className="error">{errors.email.message}</div>}
 				</div>
-				<div>
-					<label>пароль:</label>
+				<div className={styles.formGroup}>
+					<label className={styles.label}>пароль:</label>
 					<input type={showPass ? 'text': 'password'}{...register('password')}/>
 					{errors.password && <div className="error">{errors.password.message}</div>}
 				</div>
-				<div>
+				<div className={styles.formGroup}>
 					<label>показать пароль</label>
 					<input type="checkbox"{...register('showPassword')}/>
 				</div>
-				{errors.root && <div className="error">{errors.root.message}</div>}
-				<button type="submit">Войти</button>
+				<div className={styles.formGroup}>
+					{errors.root && <div className="error">{errors.root.message}</div>}
+					<button type="submit">Войти</button>
+				</div>
 			</form>
 		</div>
 	);

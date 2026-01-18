@@ -1,0 +1,45 @@
+.container {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+}
+.header {
+	background-color: rgba(95, 31, 207, 0.6);
+}
+.link,.login,.logout {
+	display: inline-block;
+	padding: 20px;
+	text-decoration: none;
+	color: #333;
+}
+.link:hover ,.login:hover, .logout:hover {
+	color: whitesmoke;
+	background-color: rgba(0, 0, 0, 0.3);
+}
+.logout , .login {
+	float: right;
+	background-color: rgba(0, 0, 0, 0.0);
+	border: none;
+	display: inline-block;
+	padding: 20px;
+	cursor: pointer;
+}
+.logout {
+	font-size: 1rem; /* Совпадаем с размером шрифта ссылки */
+  	font-family: inherit;
+}
+.main {
+	flex: 1;
+	padding: 20px;
+}
+.footer {
+	padding: 30px;
+	text-align: center;
+	background-color:rgba(69, 54, 55, 1);
+	color: white;
+}
+@media screen and (max-width: 400px) {
+	.link ,.login,.logout {
+		padding: 20px 5px;
+	}
+}

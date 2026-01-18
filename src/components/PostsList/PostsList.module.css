@@ -1,0 +1,17 @@
+.postList {
+	list-style-type: none;
+	background-color: rgba(124, 125, 124, 1);
+	width: 50%;
+	padding: 20px;
+	border-radius: 20px;
+}
+.post {
+	padding:20px;
+}
+.link {
+	text-decoration: none;
+	color: black;
+}
+.link:hover {
+	text-decoration: underline;
+}

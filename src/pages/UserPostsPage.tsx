@@ -2,6 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import { useAppSelector } from "../store/hooks";
 import { fetchPosts } from "../api/postApi";
 import { Link } from "react-router-dom";
+import { PostsList } from "../components/PostsList/PostsList";
 
 export const UserPostsPage = () => {
 	const userId = useAppSelector(state => state.auth.user!.id);
@@ -16,11 +17,7 @@ export const UserPostsPage = () => {
 			{data && (
 				<div>
 					{data.length === 0 ? <div><p>У вас пока нет постов</p><Link to={'../create'}>Создать</Link></div>: (
-						<ul>
-							{data.map(post => (
-								<li key={post.id}><Link to={`${post.id}`}>{post.title}</Link></li>
-							))}
-						</ul>
+						<PostsList posts={data}/>
 					)}
 				</div>
 			)}

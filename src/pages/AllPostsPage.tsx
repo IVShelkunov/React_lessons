@@ -1,6 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import { fetchPosts } from "../api/postApi";
 import { Link } from "react-router-dom";
+import { PostsList } from "../components/PostsList/PostsList";
 
 export const AllPostsPage = () => {
 	const {data, isLoading,isError,error} = useQuery({
@@ -19,11 +20,7 @@ export const AllPostsPage = () => {
 							<Link to={'/profile/create'}>Станьте первым!</Link>
 						</div>
 					) : (
-							<ul>
-								{data.map(post => (
-									<li key={post.id}><Link to={`/posts/${post.id}`}>{post.title}</Link></li>
-								))}
-							</ul>
+							<PostsList posts={data}/>
 						)}
 				</>
 			)}
